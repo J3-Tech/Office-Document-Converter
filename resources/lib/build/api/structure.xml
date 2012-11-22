@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a10" title="">
+  <file path="service.php" hash="c6b8d580210c07caff66d51affc74f63" package="Default">
+    <class final="false" abstract="false" namespace="global" line="8" package="Default">
+      <extends/>
+      <implements>\ServiceInterface</implements>
+      <name>Service</name>
+      <full_name>\Service</full_name>
+      <docblock line="3">
+        <description><![CDATA[Service - deal with SoapClient
+		  - create instance of convertor class
+	  - do the actual conversion]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="18" package="Default">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="10">
+          <description><![CDATA[create an instance of Soap Server
+register functions for web service]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="10" name="access" description="public"/>
+          <tag line="10" name="return" description="Value." type="object">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="44" package="Default">
+        <name>convert2Image</name>
+        <full_name>convert2Image</full_name>
+        <docblock line="30">
+          <description><![CDATA[convert2Image]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="param" description="Base64 encoded file content or url" type="string" variable="$file">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="30" name="param" description="Current file extension" type="string" variable="$ext">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="30" name="param" description="Output image extension (jpg,png,bmp)" type="string" variable="$imageType">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="30" name="param" description="Compression format (zip,gz)" type="string" variable="$compression">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="30" name="param" description="Output image height" type="integer" variable="$height">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="30" name="param" description="Output image width" type="integer" variable="$width">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="30" name="access" description="public"/>
+          <tag line="30" name="return" description="Output" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="44">
+          <name>$file</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="44">
+          <name>$ext</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="44">
+          <name>$imageType</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="44">
+          <name>$compression</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="44">
+          <name>$height</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="44">
+          <name>$width</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="75" package="Default">
+        <name>convert2Pdf</name>
+        <full_name>convert2Pdf</full_name>
+        <docblock line="64">
+          <description><![CDATA[convert2Pdf]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="param" description="Base64 encoded file content or url" type="string" variable="$file">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="64" name="param" description="Current file extension" type="string" variable="$ext">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="64" name="param" description="Compression format (zip,gz)" type="string" variable="$compression">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="64" name="access" description="public"/>
+          <tag line="64" name="return" description="Output" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="75">
+          <name>$file</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="75">
+          <name>$ext</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="75">
+          <name>$compression</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="106" package="Default">
+        <name>validation</name>
+        <full_name>validation</full_name>
+        <docblock line="93">
+          <description><![CDATA[validation - validate paramters send to web service]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="param" description="file extension" type="string" variable="$ext">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="param" description="compression type" type="string" variable="$compression">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="param" description="image type" type="string" variable="$imageType">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="param" description="image height" type="string" variable="$height">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="param" description="image width" type="string" variable="$width">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="access" description="private"/>
+          <tag line="93" name="return" description="(boolean or exception) value" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="106">
+          <name>$ext</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="106">
+          <name>$compression</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="106">
+          <name>$imageType</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="106">
+          <name>$height</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="106">
+          <name>$width</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="167" package="Default">
+        <name>updateWsdl</name>
+        <full_name>updateWsdl</full_name>
+        <docblock line="160">
+          <description><![CDATA[updateWsdl - update WSDL based on url of this file]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="160" name="access" description="private"/>
+          <tag line="160" name="return" description="Value." type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file service.php</error>
+    </parse_markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
