@@ -7,11 +7,11 @@ Office Document Convertor (ODC) is an online convertor for office document which
 
 Other services provided by ODC are listed below:
 ------------------------------------------------
-Convert to Portable Document Format (PDF)
-Virus Scanning on upload files
-Can optionally compressed the output (images or PDF)
-Allow different image format including jpeg, png, bmp - default: jpg
-Allow different resolution of images
+-Convert to Portable Document Format (PDF)
+-Virus Scanning on upload files
+-Can optionally compressed the output (images or PDF)
+-Allow different image format including jpeg, png, bmp - default: jpg
+-Allow different resolution of images
 
 List of files supported by ODC:
 -------------------------------
