@@ -15,15 +15,14 @@ Other services provided by ODC are listed below:
 
 List of files supported by ODC:
 -------------------------------
-
-Word Processing format
-Rich Text Format (rtf)
-OpenDocument text (odt)
-MS Word (doc,docx)
-Spreedsheet
-OpenDocument Spreedsheet (ods)
-MS Excel (xls,xlsx)
-Presentation
-OpenDocument Presentation (odp)
-MS Powerpoint (ppt,pptx)
-Portable Document Format (pdf)
+- Word Processing format
+	* Rich Text Format (rtf)
+	* OpenDocument text (odt)
+	* MS Word (doc,docx)
+- Spreedsheet
+	* OpenDocument Spreedsheet (ods)
+	* MS Excel (xls,xlsx)
+- Presentation
+	- OpenDocument Presentation (odp)
+	- MS Powerpoint (ppt,pptx)
+- Portable Document Format (pdf)
