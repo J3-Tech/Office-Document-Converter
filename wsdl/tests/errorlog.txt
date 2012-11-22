@@ -1,0 +1,148 @@
+[07-Apr-2006 10:02:32] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://localhost/wshelper/service.php?class=contactManager&wsdl' in f:\myweb\wshelper\tests\webservice.php on line 7
+[07-Apr-2006 10:02:32] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://localhost/wshelper/service.php?class=contactManager&wsdl' in f:\myweb\wshelper\tests\webservice.php:7
+Stack trace:
+#0 f:\myweb\wshelper\tests\webservice.php(7): SoapClient->__construct('http://localhos...', Array)
+#1 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 7
+[07-Apr-2006 10:03:26] PHP Fatal error:  Uncaught SoapFault exception: [SOAP-ENV:Server] Call to undefined method WSHelper::fault() in f:\myweb\wshelper\tests\webservice.php:11
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(11): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 11
+[07-Apr-2006 10:05:09] PHP Fatal error:  Uncaught SoapFault exception: [SOAP-ENV:Server] Call to a member function fault() on a non-object in f:\myweb\wshelper\tests\webservice.php:11
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(11): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 11
+[07-Apr-2006 10:05:11] PHP Fatal error:  Uncaught SoapFault exception: [SOAP-ENV:Server] Call to a member function fault() on a non-object in f:\myweb\wshelper\tests\webservice.php:11
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(11): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 11
+[07-Apr-2006 10:09:12] PHP Fatal error:  Uncaught SoapFault exception: [SOAP-ENV:Server] Call to a member function fault() on a non-object in f:\myweb\wshelper\tests\webservice.php:11
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(11): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 11
+[07-Apr-2006 10:09:26] PHP Fatal error:  Uncaught SoapFault exception: [SOAP-ENV:Server] Call to a member function fault() on a non-object in f:\myweb\wshelper\tests\webservice.php:11
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(11): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 11
+[07-Apr-2006 10:14:05] PHP Fatal error:  Uncaught SoapFault exception: [SOAP-ENV:Server] Call to a member function fault() on a non-object in f:\myweb\wshelper\tests\webservice.php:11
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(11): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 11
+[07-Apr-2006 10:14:14] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'f:\myweb\wshelper\wsdl2\contactManager.wsdl' in f:\myweb\wshelper\tests\webservice.php:8
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContacts', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(8): SoapClient->getContacts()
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 8
+[07-Apr-2006 10:29:26] PHP Fatal error:  Uncaught SoapFault exception: [SOAP-ENV:Server] Call to a member function fault() on a non-object in f:\myweb\wshelper\tests\webservice.php:11
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(11): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 11
+[07-Apr-2006 10:32:35] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:11
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(11): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 11
+[07-Apr-2006 10:33:41] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:11
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(11): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 11
+[07-Apr-2006 10:33:55] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:12
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(12): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 12
+[07-Apr-2006 10:34:22] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:13
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(13): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 13
+[07-Apr-2006 10:35:10] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:14
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(14): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 14
+[07-Apr-2006 10:35:24] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:14
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(14): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 14
+[07-Apr-2006 10:36:15] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:15
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(15): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 15
+[07-Apr-2006 10:40:19] PHP Fatal error:  Uncaught SoapFault exception: [WSDL] SOAP-ERROR: Parsing WSDL: Couldn't load from 'f:\myweb\wshelper\contactManager.wsdl' in f:\myweb\wshelper\tests\webservice.php:10
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContacts', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(10): SoapClient->getContacts()
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 10
+[07-Apr-2006 10:46:01] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:15
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(15): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 15
+[07-Apr-2006 10:46:50] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:15
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(15): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 15
+[07-Apr-2006 10:46:51] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:15
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(15): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 15
+[07-Apr-2006 10:46:51] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:15
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(15): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 15
+[07-Apr-2006 10:46:52] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:15
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(15): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 15
+[07-Apr-2006 11:15:33] PHP Parse error:  parse error, unexpected T_PUBLIC, expecting ',' or ';' in f:\myweb\wshelper\tests\annotations.php on line 20
+[07-Apr-2006 11:15:55] PHP Parse error:  parse error, unexpected T_PUBLIC, expecting ',' or ';' in f:\myweb\wshelper\tests\annotations.php on line 20
+[07-Apr-2006 11:16:03] PHP Fatal error:  Class 'phpdocClass' not found in f:\myweb\wshelper\tests\annotations.php on line 26
+[07-Apr-2006 11:16:21] PHP Fatal error:  Class 'IPReflectionClass' not found in f:\myweb\wshelper\tests\annotations.php on line 26
+[07-Apr-2006 12:39:34] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:15
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(15): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 15
+[07-Apr-2006 12:39:46] PHP Fatal error:  Uncaught SoapFault exception: [SERVER] Contact '1' not found in f:\myweb\wshelper\tests\webservice.php:15
+Stack trace:
+#0 [internal function]: SoapClient->__call('getContact', Array)
+#1 f:\myweb\wshelper\tests\webservice.php(15): SoapClient->getContact(1)
+#2 {main}
+  thrown in f:\myweb\wshelper\tests\webservice.php on line 15

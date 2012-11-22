@@ -1,0 +1,88 @@
+body {
+	margin:0;
+	padding:0;
+	text-align: center;
+	background: #ffffff url("../images/doc/back.gif") repeat-y center;
+}
+body, table, th, td, p, div {
+	font-family: Arial, Helvetica;
+	font-size: 12pt;
+	line-height:1.4;
+}
+#main {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	width: 980px;
+}
+#mainpadded {
+	padding: 0px 40px 80px 40px;
+}
+#mainheader {
+	background: #ffffff url("../images/doc/backtop.jpg") no-repeat;
+	height: 180px;
+}
+#mainheaderpadded {
+	padding: 130px 40px 0px 40px;
+	text-align: right;
+}
+td {
+	vertical-align: top;
+}
+td#menu {
+	width: 300px;
+}
+td#content {
+}
+div.method {
+	padding-left: 10px;
+	margin-bottom: 20px;
+	border-left: 2px solid #C0C0C0;
+}
+div.methodwarning {
+	padding-left: 10px;
+	margin-bottom: 20px;
+	border-left: 4px solid #FF0000;
+}
+div.property {
+	padding-left: 10px;
+	margin-bottom: 20px;
+	border-left: 2px solid #C0C0C0;
+}
+div.propertywarning {
+	padding-left: 10px;
+	margin-bottom: 20px;
+	border-left: 4px solid #FF0000;
+}
+div.warning {
+	font-weight: bold;
+	color: #FF0000;
+	float: left;
+}
+a {
+	color: #FFA619;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover {
+	text-decoration: underline;
+}
+p {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+h1 {
+	margin-top: 0px;
+	margin-bottom: 10px;
+	padding: 0px;
+	font-family: Verdana, Helvetica;
+	font-size: 20pt;
+	color: #000000;
+}
+h2 {
+	margin-top: 0px;
+	margin-bottom: 10px;
+	font-family: Verdana, Helvetica;
+	font-size: 16pt;
+	color: #000000;
+}
