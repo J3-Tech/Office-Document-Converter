@@ -1,9 +1,9 @@
-Office Document Convertor
+Office Document Converter
 =========================
 
 Overview
 --------
-Office Document Convertor (ODC) is an online convertor for office document which runs as a web service. Its aim is to provide the facility of converting almost all office documents into image which make office documents viewable even without any office suite software installed on your machines.
+Office Document Converter (ODC) is an online convertor for office document which runs as a web service. Its aim is to provide the facility of converting almost all office documents into image which make office documents viewable even without any office suite software installed on your machines.
 
 Other services provided by ODC are listed below:
 ------------------------------------------------
