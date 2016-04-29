@@ -1,6 +1,8 @@
 Office Document Converter
 =========================
 
+[![Join the chat at https://gitter.im/chellem/Office-Document-Converter](https://badges.gitter.im/chellem/Office-Document-Converter.svg)](https://gitter.im/chellem/Office-Document-Converter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Overview
 --------
 Office Document Converter (ODC) is an online convertor for office document which runs as a web service. Its aim is to provide the facility of converting almost all office documents into image which make office documents viewable even without any office suite software installed on your machines.
