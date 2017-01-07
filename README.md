@@ -28,3 +28,12 @@ List of files supported by ODC:
 	- OpenDocument Presentation (odp)
 	- MS Powerpoint (ppt,pptx)
 - Portable Document Format (pdf)
+
+Installation
+-------------
+
+Edit the config (`resources/config.php`) and the run application from the command below.
+
+```php
+	php -S localhost:8000 -t .
+```
