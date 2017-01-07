@@ -1,0 +1,25 @@
+{
+    "name": "labzone/office-document-converter",
+    "description": "Office Document Converter",
+    "keywords": ["office", "document", "convertor"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.5.9",
+        "ext-curl": "*",
+        "ext-zip": "*",
+        "ext-soap": "*"
+    },
+    "scripts": {
+      "pre-install-cmd": [
+        "pdftohtml -v",
+        "libreoffice --version",
+        "gs -v"
+      ],
+      "pre-update-cmd": [
+        "pdftohtml -v",
+        "libreoffice --version",
+        "gs -v"
+      ]
+    }
+}
