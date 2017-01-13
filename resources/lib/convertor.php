@@ -123,11 +123,10 @@ class Convertor implements ConvertorInterface{
 		$cmd="cd \"{$this->path}\" && ";
 		$cmd.="sh libreoffice.sh ";
 		$cmd.="\"{$this->file}\" \"{$this->outputDir}\"";
-		if(shell_exec($cmd)!=null){
-			$info=pathinfo($this->file);
-			$this->pdf=$this->outputDir.$info['filename'].'.pdf';
-			return str_replace(ROOT_PATH, PUBLIC_ROOT, $this->pdf);
-		}
+		shell_exec($cmd);
+		$info=pathinfo($this->file);
+		$this->pdf=$this->outputDir.$info['filename'].'.pdf';
+		return str_replace(ROOT_PATH, PUBLIC_ROOT, $this->pdf);
 	}
 
     /**
@@ -155,16 +154,22 @@ class Convertor implements ConvertorInterface{
      * @return mixed Value.
      */
 	public function toImg($type){
+		$this->outputDir=CONVERTDIR;
 		if(!isset($this->pdf)){
 			$this->toPdf();
 		}
 		$unique=basename($this->getUnique());
-		$this->outputDir=$this->outputDir.$unique;
+		$this->outputDir = $this->outputDir.$unique;
 		$this->mkdir($this->outputDir);
 		$cmd="cd \"{$this->path}\" && ";
-		$cmd.="sh toImg.sh {$type} \"{$this->file}\" \"{$this->outputDir}\" ".basename($this->file);
+		$cmd.="sh toImg.sh {$type} \"{$this->pdf}\" \"{$this->outputDir}\" ".basename($this->pdf);
 		$cmd.=" {$this->height}x{$this->width}";
-		shell_exec($cmd);
+		$output = shell_exec($cmd);
+		file_put_contents('/tmp/out2.txt', $cmd);
+		if(preg_match('/Last OS error: No such file or directory/', $output)){
+			$this->pdf = preg_replace('/convert/', 'upload', $this->pdf);
+			return $this->toImg($type);
+		}
 		$files=glob("{$this->outputDir}/*.{$type}");
 		natcasesort($files);
 		return $files;
