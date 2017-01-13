@@ -1,4 +1,8 @@
 vendor
 *.log
-upload/
-convert/
+
+upload/*
+convert/*
+
+!upload/.gitkeep
+!convert/.gitkeep
