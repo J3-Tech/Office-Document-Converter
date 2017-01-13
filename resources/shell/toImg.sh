@@ -1,7 +1,9 @@
 #!/bin/bash
-case 'jpg' in 
+
+echo $4
+case 'jpg' in
 	$1 )
-	gs -dNOPAUSE -sDEVICE=jpeg -dFirstPage=1 -sOutputFile="$3/%d-$4.jpg" -dJPEGQ=100 -r$5 -q "$2" -c quit
+	gs -dNOPAUSE -sDEVICE=jpeg -dFirstPage=1 -sOutputFile="$3/%d-$4.jpg" -dJPEGQ=100 -r"$5" -q "$2" -c quit
 	;;
 esac
 case 'png' in

@@ -35,5 +35,5 @@ Installation
 Edit the config (`resources/config.php`) and the run application from the command below.
 
 ```php
-	php -S localhost:8000 -t .
+php -S localhost:8000 -t .
 ```
