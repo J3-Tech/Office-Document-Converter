@@ -1,7 +1,7 @@
 <?php
 
 /**
-* Convertor class     
+* Convertor class
 */
 class Convertor implements ConvertorInterface{
 
@@ -15,7 +15,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * __construct
-     * 
+     *
      * @access public
      *
      * @return mixed Value.
@@ -23,7 +23,7 @@ class Convertor implements ConvertorInterface{
 	public function __construct(){
 		$this->path=SHELL;
 		$this->outputDir=CONVERTDIR;
-		$this->uploadDir=UPLOADDIR;		
+		$this->uploadDir=UPLOADDIR;
 		$this->mkdir($this->outputDir);
 		$this->mkdir($this->uploadDir);
 		$this->height=300;
@@ -32,22 +32,22 @@ class Convertor implements ConvertorInterface{
 
     /**
      * setData
-     * 
+     *
      * @param mixed $data Description.
      *
      * @access public
      *
      * @return mixed Value.
      */
-	public function setData($data){		
+	public function setData($data){
 		$this->data=$data;
-		$this->saveStream();		
+		$this->saveStream();
 		return $this;
 	}
 
     /**
      * getPdf
-     * 
+     *
      * @access public
      *
      * @return mixed Value.
@@ -58,7 +58,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * setPdf
-     * 
+     *
      * @param mixed $pdf Description.
      *
      * @access public
@@ -72,7 +72,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * setHeight
-     * 
+     *
      * @param mixed $height Description.
      *
      * @access public
@@ -86,7 +86,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * setWidth
-     * 
+     *
      * @param mixed $width Description.
      *
      * @access public
@@ -100,7 +100,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * setExtension
-     * 
+     *
      * @param mixed $ext Description.
      *
      * @access public
@@ -114,7 +114,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * toPdf
-     * 
+     *
      * @access public
      *
      * @return mixed Value.
@@ -132,7 +132,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * toHtml
-     * 
+     *
      * @access public
      *
      * @return mixed Value.
@@ -149,7 +149,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * toJpg
-     * 
+     *
      * @access public
      *
      * @return mixed Value.
@@ -162,9 +162,9 @@ class Convertor implements ConvertorInterface{
 		$this->outputDir=$this->outputDir.$unique;
 		$this->mkdir($this->outputDir);
 		$cmd="cd \"{$this->path}\" && ";
-		$cmd.="sh toImg.sh {$type} \"{$this->pdf}\" \"{$this->outputDir}\" ".basename($this->pdf);
+		$cmd.="sh toImg.sh {$type} \"{$this->file}\" \"{$this->outputDir}\" ".basename($this->file);
 		$cmd.=" {$this->height}x{$this->width}";
-		shell_exec($cmd);		
+		shell_exec($cmd);
 		$files=glob("{$this->outputDir}/*.{$type}");
 		natcasesort($files);
 		return $files;
@@ -172,7 +172,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * toText
-     * 
+     *
      * @access public
      *
      * @return mixed Value.
@@ -187,7 +187,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * getUnique
-     * 
+     *
      * @access public
      *
      * @return mixed Value.
@@ -203,7 +203,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * getRemoteFile
-     * 
+     *
      * @access private
      *
      * @return mixed Value.
@@ -221,19 +221,20 @@ class Convertor implements ConvertorInterface{
 
     /**
      * scan
-     * 
+     *
      * @access private
      *
      * @return mixed Value.
      */
 	private function scan(){
+		return true;
 		if(!extension_loaded('clamav')){
 			if(!dl('clamav.so')){
 				return true;
 			}else{
 				$this->scan();
 			}
-		}else{	
+		}else{
 			$retCode=cl_scanfile($this->file,$virus);
 			if($retCode==CL_VIRUS){
 				$this->virusName=$virus;
@@ -246,7 +247,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * mkdir
-     * 
+     *
      * @param mixed $dir  Description.
      * @param int   $mode Description.
      *
@@ -257,10 +258,10 @@ class Convertor implements ConvertorInterface{
 	private function mkdir($dir,$mode=0777){
 		try{
 			if(!(file_exists($dir) && is_dir($dir))){
-				return mkdir($dir,$mode);				
+				return mkdir($dir,$mode);
 			}
 			return true;
-		}catch(Exception $e){		
+		}catch(Exception $e){
 			return false;
 		}
 	}
@@ -268,7 +269,7 @@ class Convertor implements ConvertorInterface{
 	private function saveStream(){
 		$data=base64_decode($this->data);
 		$this->file=$this->uploadDir.$this->getUnique().$this->ext;
-		if((substr($data,0,4)=='http')||(substr($data, 0,3)=='ftp')){			
+		if((substr($data,0,4)=='http')||(substr($data, 0,3)=='ftp')){
 			$arr=explode('.', $data);
 			$ext=end($arr);
 			if($ext=='pdf'){
@@ -289,7 +290,7 @@ class Convertor implements ConvertorInterface{
 
     /**
      * compress
-     * 
+     *
      * @param mixed $fileArr Description.
      * @param mixed $type    Description.
      * @param mixed $output  Description.
@@ -305,20 +306,18 @@ class Convertor implements ConvertorInterface{
 				$zip->open("{$this->outputDir}.zip",\ZipArchive::CREATE);
 				foreach ($fileArr as $key => $filename) {
 					$zip->addfile($filename,basename($filename));
-				}					
+				}
 				$zip->close();
 				$this->outputDir=str_replace(ROOT_PATH, PUBLIC_ROOT, $this->outputDir);
-				return array("{$this->outputDir}.zip");				
+				return array("{$this->outputDir}.zip");
 			case 'gz':
 				$gz=gzopen("{$this->outputDir}.gz",'w9');
 				foreach ($fileArr as $key => $filename) {
 					// overwrite?
 					gzwrite($gz, file_get_contents($filename));
-				}					
-				gzclose($gz);	
-				return "{$this->outputDir}.gz";			
+				}
+				gzclose($gz);
+				return "{$this->outputDir}.gz";
 		}
 	}
 }
-
-?>

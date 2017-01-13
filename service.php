@@ -6,5 +6,3 @@ require_once realpath(dirname(__FILE__).'/resources/config.php');
 new Convertor;
 $service=new Service;
 $service->create();
-
-?>

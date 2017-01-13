@@ -10,26 +10,26 @@ class Service implements ServiceInterface{
     /**
      * create an instance of Soap Server
      * register functions for web service
-     * 
+     *
      * @access public
      *
      * @return object Value.
      */
-	public function create(){	
-		$this->updateWsdl();	
+	public function create(){
+		$this->updateWsdl();
 		$soap=new SoapServer('service.wsdl', array('soap_version'=> SOAP_1_2));
 		$soap->setClass('Service');
 		$soap->addFunction('convert2Image');
 		$soap->addFunction('convert2Pdf');
 		$soap->addFunction('convert2Html');
 		$soap->handle();
-		return $this;		
+		return $this;
 	}
 
 
     /**
      * convert2Image
-     * 
+     *
      * @param string $file        Base64 encoded file content or url
      * @param string $ext         Current file extension
      * @param string $imageType   Output image extension (jpg,png,bmp)
@@ -41,10 +41,10 @@ class Service implements ServiceInterface{
      *
      * @return array Output
      */
-	public function convert2Image($file,$ext,$imageType=null,$compression=null,$height=null,$width=null){		
+	public function convert2Image($file,$ext,$imageType=null,$compression=null,$height=null,$width=null){
 		$imageType=($imageType) ? $imageType : 'jpg';
 		$imageType=($imageType=='jpeg') ? 'jpg': $imageType;
-		if($this->validation($ext,$compression,$imageType,$height,$width)){			
+		if($this->validation($ext,$compression,$imageType,$height,$width)){
 			$convertor=new Convertor();
 			($height) ? $convertor->setHeight($height) : null;
 			($width) ? $convertor->setWidth($width) : null;
@@ -63,7 +63,7 @@ class Service implements ServiceInterface{
 
     /**
      * convert2Pdf
-     * 
+     *
      * @param string $file        Base64 encoded file content or url
      * @param string $ext         Current file extension
      * @param string $compression Compression format (zip,gz)
@@ -76,7 +76,7 @@ class Service implements ServiceInterface{
 		$ext=strtolower($ext);
 		if($ext=='pdf'){
 			throw new SoapFault("Logic", "The file is already in pdf");
-			
+
 		}
 		if($this->validation($ext,$compression)){
 			$convertor=new Convertor();
@@ -92,7 +92,7 @@ class Service implements ServiceInterface{
 
     /**
      * validation - validate paramters send to web service
-     * 
+     *
      * @param string $ext         file extension
      * @param string $compression compression type
      * @param string $imageType   image type
@@ -109,7 +109,7 @@ class Service implements ServiceInterface{
 			case 'doc'	:
 			case 'docx'	:
 			case 'rtf'	:
-	        case 'odt'	:			
+	        case 'odt'	:
 			case 'ppt'	:
 			case 'pptx'	:
 			case 'xls'	:
@@ -117,9 +117,9 @@ class Service implements ServiceInterface{
 			case 'ods'	:
 			case 'odp'	:
 			case 'txt'  :
-				break;			
+				break;
 			default:
-				throw new SoapFault("Format", "Unknown file format");				
+				throw new SoapFault("Format", "Unknown file format");
 				break;
 		}
 		if($compression){
@@ -151,7 +151,7 @@ class Service implements ServiceInterface{
 		if($width){
 			if(!is_int($width)){
 				logger("Invalid data type - Width: {$height}");
-				throw new SoapFault("Data Type","Must be integer");	
+				throw new SoapFault("Data Type","Must be integer");
 			}
 		}
 		return true;
@@ -159,14 +159,14 @@ class Service implements ServiceInterface{
 
     /**
      * updateWsdl - update WSDL based on url of this file
-     * 
+     *
      * @access private
      *
      * @return boolean Value.
      */
 	private function updateWsdl(){
 		$dom=new DOMDocument();
-		$doc->preserveWhiteSpace = false;
+		$dom->preserveWhiteSpace = false;
 		$dom->formatOutput = true;
 		$dom->load(ROOT_PATH.'service.wsdl');
 		$address=$dom->getElementsByTagName('address')->item(0);
@@ -176,7 +176,7 @@ class Service implements ServiceInterface{
 			$dom->save(ROOT_PATH.'service.wsdl');
 		}
 		$operations=$dom->getElementsByTagName('operation');
-		for ($i=0; $i <$operations->length ; $i++) { 
+		for ($i=0; $i <$operations->length ; $i++) {
 			$operation=$operations->item($i);
 			$action=$operation->getAttribute('soapAction');
 			if($action && $action!=PUBLIC_ROOT.'service.php'){
@@ -188,7 +188,3 @@ class Service implements ServiceInterface{
 	}
 
 }
-
-
-
-?>
