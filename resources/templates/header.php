@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 		<meta charset="utf-8">
-		<title>ODC | <?php echo $title ; ?></title>
+		<title>ODC | <?php echo $title; ?></title>
 		<meta name="description" content="">
 		<link href="<?php echo ASSETS;?>/css/template.css" rel="stylesheet" media="all">
 		<link rel="shortcut icon" href="../img/favicon.ico">
