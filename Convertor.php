@@ -44,7 +44,8 @@ class Convertor
         Strategy::create($type)
             ->setOutputDir($this->outputDir)
             ->setResolution("{$this->height}x{$this->width}")
-            ->convert($documentPath);
+            ->setDocumentPath($documentPath)
+            ->convert();
     }
 
     /**

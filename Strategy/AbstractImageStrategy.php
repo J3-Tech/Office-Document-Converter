@@ -9,18 +9,18 @@ abstract class AbstractImageStrategy extends AbstractStrategy
 {
     const CMD = 'gs -dNOPAUSE -sDEVICE=%s -dFirstPage=1 -sOutputFile="%s/%%d-%s.%s" -r"%s" -q "%s" -c quit';
 
-    public function getCommand($documentPath)
+    public function getCommand()
     {
-        $extension = pathinfo($documentPath, PATHINFO_EXTENSION);
+        $extension = pathinfo($this->documentPath, PATHINFO_EXTENSION);
 
         return sprintf(
             self::CMD,
             $this->getFormat(),
             $this->outputDir,
-            basename($documentPath, '.'.$extension),
+            basename($this->documentPath, '.'.$extension),
             $this->getExtension(),
             $this->resolution,
-            $documentPath
+            $this->documentPath
         );
     }
 

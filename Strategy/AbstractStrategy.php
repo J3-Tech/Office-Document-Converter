@@ -63,18 +63,18 @@ abstract class AbstractStrategy implements IConvertStrategy
         return $this;
     }
 
-    public function convert($documentPath)
+    public function convert()
     {
-        echo $this->getCommand($documentPath);
+        echo $this->getCommand($this->documentPath);
         die();
-        $process = new Process($this->getCommand($documentPath));
+        $process = new Process($this->getCommand($this->documentPath));
         $process->run();
         if (!$process->isSuccessful()) {
             throw new ProcessFailedException($process);
         }
     }
 
-    public function getCommand($documentPath)
+    public function getCommand()
     {
         return sprintf(
             self::GS,
@@ -83,7 +83,32 @@ abstract class AbstractStrategy implements IConvertStrategy
             'test',
             'test',
             $this->resolution,
-            $documentPath
+            $this->documentPath
         );
     }
+
+    /**
+     * Get the value of document path
+     *
+     * @return string
+     */
+    public function getDocumentPath()
+    {
+        return $this->documentPath;
+    }
+
+    /**
+     * Set the value of document path
+     *
+     * @param string documentPath
+     *
+     * @return self
+     */
+    public function setDocumentPath($documentPath)
+    {
+        $this->documentPath = $documentPath;
+
+        return $this;
+    }
+
 }

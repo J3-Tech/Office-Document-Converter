@@ -6,11 +6,11 @@ class Html extends AbstractStrategy
 {
     const CMD = 'pdftohtml -c -p "%s"';
 
-    public function getCommand($documentPath)
+    public function getCommand()
     {
         return sprintf(
             self::CMD,
-            $documentPath
+            $this->documentPath
         );
     }
 

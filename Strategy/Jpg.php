@@ -4,9 +4,9 @@ namespace ODC\Strategy;
 
 class Jpg extends AbstractImageStrategy
 {
-    public function getCommand($documentPath)
+    public function getCommand()
     {
-        return parent::getCommand($documentPath).' -dJPEGQ=100';
+        return parent::getCommand().' -dJPEGQ=100';
     }
 
     public function getFormat()

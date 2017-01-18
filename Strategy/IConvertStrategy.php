@@ -4,7 +4,7 @@ namespace ODC\Strategy;
 
 interface IConvertStrategy
 {
-    public function convert($documentPath);
+    public function convert();
     public function getFormat();
-    public function getCommand($documentPath);
+    public function getCommand();
 }
