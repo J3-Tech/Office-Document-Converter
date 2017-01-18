@@ -8,7 +8,12 @@
         "php": ">=5.5.9",
         "ext-curl": "*",
         "ext-zip": "*",
-        "ext-soap": "*"
+        "symfony/process": "^3.2"
+    },
+    "autoload": {
+      "psr-4": {
+        "ODC\\": ""
+      }
     },
     "scripts": {
       "pre-install-cmd": [
