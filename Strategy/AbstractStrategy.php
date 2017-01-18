@@ -65,8 +65,6 @@ abstract class AbstractStrategy implements IConvertStrategy
 
     public function convert()
     {
-        echo $this->getCommand($this->documentPath);
-        die();
         $process = new Process($this->getCommand($this->documentPath));
         $process->run();
         if (!$process->isSuccessful()) {
